@@ -49,14 +49,14 @@ def chFile2Send():
     files ={}
     if not os.path.exists(PATH):
         os.makedirs(PATH)
-    print ("""Do you want to specify the path to the email folder?
-            Default: ./sender(y/n)""")
-    ch = input()
-    match ch:
-       case "y":
-            PATH = input()
-       case _:
-            print(PATH)
+    # print ("""Do you want to specify the path to the email folder?
+    #         Default: ./sender(y/n)""")
+    # ch = input()
+    # match ch:
+    #    case "y":
+    #         PATH = input()
+    #    case _:
+    #         print(PATH)
     ls = os.listdir(PATH)
     i= 1
     print ("Select file:")
@@ -79,7 +79,7 @@ def chFile2Send():
 
 def read_csv(file):
     emails={}
-    with open(file, encoding="utf-8") as csvfile:
+    with open(file, ) as csvfile:
         reader =csv.DictReader(csvfile)
         for row in reader:
             if "Submit" in row['status']:
